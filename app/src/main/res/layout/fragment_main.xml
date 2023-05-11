@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_location"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/toolbar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView_location_on_toolbar"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/ic_location_on"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_location"
+        app:layout_constraintStart_toStartOf="@+id/toolbar_location"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_location" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="17dp"
+        android:gravity="top"
+        android:text="225 Central Park West, NY 10024, USA"
+        android:textAppearance="@style/location_title"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_location"
+        app:layout_constraintEnd_toStartOf="@id/imageView_arrow_down_toolbar"
+        app:layout_constraintStart_toEndOf="@+id/imageView_location_on_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_location" />
+
+    <ImageView
+        android:id="@+id/imageView_arrow_down_toolbar"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_arrow_down"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_location"
+        app:layout_constraintEnd_toEndOf="@id/toolbar_location"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_location" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal_scroll_stores"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_location">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/horizontal_scroll_btn"
+                android:backgroundTint="#FBBC04"
+                android:drawableStart="@drawable/ic_delivery"
+                android:text="Delivery"
+                android:textColor="#FFFFFFDE" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/horizontal_scroll_btn"
+                android:text="Pickup" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/horizontal_scroll_btn"
+                android:text="Catering" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/horizontal_scroll_btn"
+                android:text="Curbside" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="17dp"
+        android:background="#F9F9F9"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_scroll_stores">
+
+        <ImageView
+            android:id="@+id/ic_search"
+            android:layout_width="52dp"
+            android:layout_height="48dp"
+            android:paddingVertical="15dp"
+            android:paddingStart="19dp"
+            android:paddingEnd="15dp"
+            android:src="@drawable/ic_search" />
+
+        <EditText
+            android:id="@+id/editText_search"
+            style="@style/EditTextSearch"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/black"
+            android:gravity="center_vertical"
+            android:hint="Find store by name"
+            android:lineSpacingExtra="5sp"
+            android:textColor="#353536"
+            android:textCursorDrawable="@color/black" />
+
+        <ImageView
+            android:id="@+id/ic_option_filter_search"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:paddingVertical="12dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/ic_options_filter" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_stores_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/search_container"
+        tools:listitem="@layout/stores_type_item" />
+
+    <LinearLayout
+        android:id="@+id/container_stores_info"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_stores_type">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:gravity="top"
+            android:text="58"
+            android:textColor="#666666"
+            android:textSize="18sp" />
+
+        <!--        android:layout_marginTop="40dp"-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_marginStart="8dp"
+            android:gravity="top"
+            android:text="stores Open"
+            android:textColor="#666666"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="18.5dp"
+        android:layout_marginEnd="11dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/container_stores_info"
+        tools:listitem="@layout/item_list_stores_stuff" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
