@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainFragment">
+    tools:context=".main.MainFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_location"
@@ -15,6 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView_location_on_toolbar"
@@ -75,8 +76,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 style="@style/horizontal_scroll_btn"
                 android:backgroundTint="#FBBC04"
-                android:drawableStart="@drawable/delivery_text_yellow"
-                />
+                android:drawableStart="@drawable/delivery_text_yellow" />
 
             <androidx.appcompat.widget.AppCompatButton
                 style="@style/horizontal_scroll_btn"
@@ -104,7 +104,6 @@
         app:layout_constraintTop_toBottomOf="@id/horizontal_scroll_stores">
 
         <ImageView
-            android:id="@+id/ic_search"
             android:layout_width="52dp"
             android:layout_height="48dp"
             android:paddingVertical="15dp"
@@ -118,6 +117,7 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:background="@android:color/transparent"
             android:backgroundTint="@color/black"
             android:gravity="center_vertical"
             android:hint="Find store by name"
@@ -151,7 +151,7 @@
     <LinearLayout
         android:id="@+id/container_stores_info"
         android:layout_width="wrap_content"
-        android:layout_height="22dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
         android:layout_marginTop="53dp"
         android:layout_marginBottom="16dp"
@@ -177,16 +177,29 @@
             android:textColor="#666666"
             android:textSize="14sp" />
     </LinearLayout>
+    <!--    -->
+    <!--<androidx.core.widget.NestedScrollView-->
+    <!--    android:layout_width=""-->
+    <!--    android:layout_height=""-->
 
-    <androidx.recyclerview.widget.RecyclerView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
+        android:layout_height="0dp"
         android:layout_marginTop="18.5dp"
-        android:layout_marginEnd="11dp"
+        android:layout_weight="1"
         android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/container_stores_info"
-        tools:listitem="@layout/item_list_stores_stuff" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container_stores_info">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_store_stuff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_list_stores_stuff" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
