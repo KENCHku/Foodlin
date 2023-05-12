@@ -23,14 +23,14 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="17dp"
         android:layout_marginBottom="15dp"
-        android:src="@drawable/ic_location_on"
+        android:src="@drawable/ion_call"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar_location"
         app:layout_constraintStart_toStartOf="@+id/toolbar_location"
         app:layout_constraintTop_toTopOf="@+id/toolbar_location" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="19dp"
@@ -46,8 +46,8 @@
 
     <ImageView
         android:id="@+id/imageView_arrow_down_toolbar"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="14dp"
+        android:layout_height="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="16dp"
@@ -75,9 +75,8 @@
             <androidx.appcompat.widget.AppCompatButton
                 style="@style/horizontal_scroll_btn"
                 android:backgroundTint="#FBBC04"
-                android:drawableStart="@drawable/ic_delivery"
-                android:text="Delivery"
-                android:textColor="#FFFFFFDE" />
+                android:drawableStart="@drawable/delivery_text_yellow"
+                />
 
             <androidx.appcompat.widget.AppCompatButton
                 style="@style/horizontal_scroll_btn"
@@ -133,7 +132,7 @@
             android:paddingVertical="12dp"
             android:paddingStart="20dp"
             android:paddingEnd="16dp"
-            android:src="@drawable/ic_options_filter" />
+            android:src="@drawable/ion_options_outline" />
 
     </LinearLayout>
 
