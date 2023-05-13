@@ -38,7 +38,7 @@
         android:layout_marginBottom="13dp"
         android:gravity="center_vertical"
         android:letterSpacing="0.03"
-        android:text="Menu"
+        android:text="@string/menu"
         android:textColor="#353536"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar_detail_fragment"
@@ -89,12 +89,12 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginEnd="60dp"
-            android:textColorHint="#61000000"
-            android:backgroundTint="@color/black"
             android:background="@android:color/transparent"
-            android:hint="Search product by name"
+            android:backgroundTint="@color/black"
+            android:hint="@string/search_product_by_name"
             android:lineSpacingExtra="5sp"
             android:textColor="#353536"
+            android:textColorHint="#61000000"
             android:textCursorDrawable="@color/black"
             android:textSize="16sp" />
 
@@ -124,7 +124,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center|top"
-                android:text="More Info"
+                android:text="@string/more_info"
                 android:textColor="#5B5B5B"
                 android:textSize="14sp" />
 
@@ -162,11 +162,11 @@
                 android:textSize="14sp" />
 
             <TextView
-               android:layout_width="wrap_content"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
                 android:gravity="right|top"
-                android:text="km away"
+                android:text="@string/km_away"
                 android:textColor="#5B5B5B"
                 android:textSize="14sp" />
 
@@ -203,7 +203,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="Burger Craze"
+                    android:text="@string/burger_craze"
                     android:textColor="#373737"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -223,7 +223,7 @@
                     android:layout_height="22dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginVertical="3.5dp"
-                    android:text="OPEN"
+                    android:text="@string/open"
                     android:textColor="#82C446"
                     android:textSize="18sp" />
 
@@ -271,7 +271,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="top"
-                    android:text="American"
+                    android:text="@string/american"
                     android:textColor="#838383"
                     android:textSize="15sp" />
 
@@ -287,7 +287,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="top"
-                    android:text="Burgers"
+                    android:text="@string/burgers"
                     android:textColor="#838383"
                     android:textSize="15sp" />
 
@@ -306,8 +306,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginEnd="4dp"
                     android:gravity="top"
-                    android:text="Delivery: "
+                    android:text="@string/delivery"
                     android:textColor="#838383"
                     android:textSize="12sp" />
 
@@ -316,7 +317,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="top"
-                    android:text="FREE"
+                    android:text="@string/free"
                     android:textColor="#838383"
                     android:textSize="12sp" />
 
@@ -330,8 +331,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginEnd="4dp"
                     android:gravity="top"
-                    android:text="Minimum: "
+                    android:text="@string/minimum"
                     android:textColor="#838383"
                     android:textSize="12sp" />
 
@@ -364,7 +366,7 @@
                 android:layout_marginHorizontal="9dp"
                 android:layout_marginVertical="5dp"
                 android:gravity="right|top"
-                android:text="around\n30 minutes"
+                android:text="@string/around_n30_minutes"
                 android:textColor="#979797"
                 android:textSize="14sp" />
 

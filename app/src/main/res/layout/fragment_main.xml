@@ -38,7 +38,7 @@
         android:layout_marginEnd="19dp"
         android:layout_marginBottom="17dp"
         android:gravity="top"
-        android:text="225 Central Park West, NY 10024, USA"
+        android:text="@string/place_text"
         android:textAppearance="@style/location_title"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar_location"
         app:layout_constraintEnd_toStartOf="@id/imageView_arrow_down_toolbar"
@@ -80,15 +80,15 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 style="@style/horizontal_scroll_btn"
-                android:text="Pickup" />
+                android:text="@string/pickup" />
 
             <androidx.appcompat.widget.AppCompatButton
                 style="@style/horizontal_scroll_btn"
-                android:text="Catering" />
+                android:text="@string/catering" />
 
             <androidx.appcompat.widget.AppCompatButton
                 style="@style/horizontal_scroll_btn"
-                android:text="Curbside" />
+                android:text="@string/curbside" />
 
         </LinearLayout>
     </HorizontalScrollView>
@@ -120,7 +120,7 @@
             android:background="@android:color/transparent"
             android:backgroundTint="@color/black"
             android:gravity="center_vertical"
-            android:hint="Find store by name"
+            android:hint="@string/find_store_by_name"
             android:lineSpacingExtra="5sp"
             android:textColor="#353536"
             android:textCursorDrawable="@color/black" />
@@ -162,7 +162,7 @@
             android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:gravity="top"
-            android:text="58"
+            android:text="@string/_58"
             android:textColor="#666666"
             android:textSize="18sp" />
 
@@ -173,7 +173,7 @@
             android:layout_height="17dp"
             android:layout_marginStart="8dp"
             android:gravity="top"
-            android:text="stores Open"
+            android:text="@string/stores_open"
             android:textColor="#666666"
             android:textSize="14sp" />
     </LinearLayout>

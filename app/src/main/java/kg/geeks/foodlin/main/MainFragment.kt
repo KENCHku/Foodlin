@@ -34,6 +34,23 @@ class MainFragment : Fragment() {
 
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelableArrayList("stuffList", arrayListStuff)
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        if (savedInstanceState != null){
+            val listStuff = savedInstanceState.getParcelableArrayList<Stuff>("stuffList")
+            if (listStuff != null){
+                arrayListStuff.clear()
+                arrayListStuff.addAll(listStuff)
+                stuffAdapter.notifyDataSetChanged()
+            }
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadDataStuff()
@@ -78,5 +95,4 @@ class MainFragment : Fragment() {
         binding.recyclerViewStoresType.adapter = storesAdapter
 
     }
-
 }

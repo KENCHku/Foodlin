@@ -18,14 +18,11 @@ class StuffAdapter(private val arrayList: ArrayList<Stuff>,
         holder.onBind(arrayList[position])
     }
 
-    override fun getItemCount(): Int {
-        return arrayList.size
-    }
+    override fun getItemCount(): Int = arrayList.size
 
    inner class StuffViewHolder(val binding: ItemListStoresStuffBinding) : RecyclerView.ViewHolder(binding.root){
 
 //       private val itemPosition = arrayList[adapterPosition]
-
 
        fun onBind(stuff: Stuff){
 
