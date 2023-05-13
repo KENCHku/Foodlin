@@ -30,16 +30,19 @@ class StuffAdapter(private val arrayList: ArrayList<Stuff>,
                onItemClicked(position)
            }
 
-           binding.imageViewStoresStuffItem.setImageResource(stuff.image)
-           binding.textViewTitleStoresStuffItem.text = stuff.title
-           binding.textViewStoreOpenInfo.text = stuff.isOpen
-           binding.textViewReviewGrade.text = stuff.reviewGrade.toString()
-           binding.textViewNumReviewsItem.text = stuff.numReviews
-           binding.textViewAdjectiveItem.text = stuff.adjective
-           binding.textViewObjectsItem.text = stuff.stuff
-           binding.textViewDeliveryPriceItem.text = stuff.deliveryPrice
-           binding.textViewMinSumItem.text = stuff.minPrice.toString()
-           binding.textViewDistanceInfoItem.text = stuff.distance.toString()
+           binding.apply {
+               imageViewStoresStuffItem.setImageResource(stuff.image)
+               textViewTitleStoresStuffItem.text = stuff.title
+               textViewStoreOpenInfo.text = stuff.isOpen
+               textViewReviewGrade.text = stuff.reviewGrade.toString()
+               textViewNumReviewsItem.text = stuff.numReviews.toString()
+               textViewAdjectiveItem.text = stuff.adjective
+               textViewObjectsItem.text = stuff.stuff
+               textViewDeliveryPriceItem.text = stuff.deliveryPrice
+               textViewMinSumItem.text = stuff.minPrice.toString()
+               textViewDistanceInfoItem.text = stuff.distance.toString()
+           }
+
        }
     }
 }

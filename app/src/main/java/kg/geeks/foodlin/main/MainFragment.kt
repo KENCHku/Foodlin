@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import kg.geeks.foodlin.Keys
 import kg.geeks.foodlin.R
 import kg.geeks.foodlin.databinding.FragmentMainBinding
 import kg.geeks.foodlin.detail.DetailFragment
@@ -59,14 +60,14 @@ class MainFragment : Fragment() {
     }
 
     private fun loadDataStuff() {//stuff
-        arrayListStuff.add(Stuff("Bish", "Closed", 0.2, "(666)", "Kyrgyz", "Samsy", "250", 900.0, 9.5, "around 7 hours", R.drawable.burger_craze))
-        arrayListStuff.add(Stuff("2ish", "Closed", 0.2, "(666)", "Kyrgyz", "Samsy", "250", 900.0, 9.5, "around 7 hours", R.drawable.burger_craze))
-        arrayListStuff.add(Stuff("3ish", "Closed", 0.2, "(666)", "Kyrgyz", "Samsy", "250", 900.0, 9.5, "around 7 hours", R.drawable.burger_craze))
-        arrayListStuff.add(Stuff("4ish", "Closed", 0.2, "(666)", "Kyrgyz", "Samsy", "250", 900.0, 9.5, "around 7 hours", R.drawable.burger_craze))
-        arrayListStuff.add(Stuff("5ish", "Closed", 0.2, "(666)", "Kyrgyz", "Samsy", "250", 900.0, 9.5, "around 7 hours", R.drawable.burger_craze))
-        arrayListStuff.add(Stuff("6ish", "Closed", 0.2, "(666)", "Kyrgyz", "Samsy", "250", 900.0, 9.5, "around 7 hours", R.drawable.burger_craze))
-        arrayListStuff.add(Stuff("7ish Food", "OPEN", 3.2, "(234)", "Kyrgyz", "Samsy", "250", 900.0, 1.5, "around 1 hour", R.drawable.vegeterian_pizza))
-        arrayListStuff.add(Stuff("8ish Food", "OPEN", 3.2, "(234)", "Kyrgyz", "Samsy", "250", 900.0, 1.5, "around 1 hour", R.drawable.burger_craze))
+        arrayListStuff.add(Stuff("Bish", "Closed", 0.2, 66, "Kyrgyz", "Samsy", "250", 900.0, 9.5, "around 7 hours", R.drawable.burger_craze))
+        arrayListStuff.add(Stuff("2ish", "Closed", 0.2, (666), "Kyrgyz", "Samsy", "250", 900.0, 9.5, "around 7 hours", R.drawable.burger_craze))
+        arrayListStuff.add(Stuff("3ish", "Closed", 0.2, (666), "Kyrgyz", "Samsy", "250", 900.0, 9.5, "around 7 hours", R.drawable.burger_craze))
+        arrayListStuff.add(Stuff("4ish", "Closed", 0.2, (666), "Kyrgyz", "Samsy", "250", 900.0, 9.5, "around 7 hours", R.drawable.burger_craze))
+        arrayListStuff.add(Stuff("5ish", "Closed", 0.2, (696), "Kyrgyz", "Samsy", "250", 900.0, 9.5, "around 7 hours", R.drawable.burger_craze))
+        arrayListStuff.add(Stuff("6ish", "Closed", 0.2, (666), "Kyrgyz", "Samsy", "250", 900.0, 9.5, "around 7 hours", R.drawable.burger_craze))
+        arrayListStuff.add(Stuff("7ish Food", "OPEN", 3.2, 234, "Kyrgyz", "Samsy", "250", 900.0, 1.5, "around 1 hour", R.drawable.vegeterian_pizza))
+        arrayListStuff.add(Stuff("8ish Food", "OPEN", 3.2, (234), "Kyrgyz", "Samsy", "250", 900.0, 1.5, "around 1 hour", R.drawable.burger_craze))
 
 
         stuffAdapter = StuffAdapter(arrayListStuff, this::onStuffClicked)
@@ -77,7 +78,7 @@ class MainFragment : Fragment() {
         val bundle = Bundle()
         val fragment = DetailFragment()
         val stuffParcelable = arrayListStuff[position]
-        bundle.putParcelable("stuff", stuffParcelable)
+        bundle.putParcelable(Keys.KEY_STUFF, stuffParcelable)
         fragment.arguments = bundle
 
         findNavController().navigate(R.id.action_mainFragment_to_detailFragment, bundle)

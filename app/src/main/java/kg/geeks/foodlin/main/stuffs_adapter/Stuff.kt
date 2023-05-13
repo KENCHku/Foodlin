@@ -8,7 +8,7 @@ data class Stuff(
     val title: String,
     val isOpen: String,
     val reviewGrade: Double,
-    val numReviews: String,
+    val numReviews: Int,
     val adjective:String,
     val stuff: String,
     val deliveryPrice: String,
